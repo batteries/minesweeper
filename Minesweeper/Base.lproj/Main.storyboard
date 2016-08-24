@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Board View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BoardViewController" customModule="Minesweeper" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mt-5u-CcJ">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="1Zh-tP-ahQ"/>
+                                    <constraint firstAttribute="width" constant="300" id="nc3-3X-VLc"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bombs Left: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8z-hb-FJ7">
+                                <rect key="frame" x="150" y="458" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="co8-b4-ROg">
+                                <rect key="frame" x="392" y="458" width="58" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0v-wA-OeF">
+                                <rect key="frame" x="263" y="550" width="75" height="30"/>
+                                <state key="normal" title="New Game"/>
+                                <connections>
+                                    <action selector="newGamePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1pI-Zz-4ar"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KX9-il-huB">
+                                <rect key="frame" x="540" y="552" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Rwf-SW-NZj"/>
+                                    <constraint firstAttribute="height" constant="40" id="kiZ-sg-8gg"/>
+                                </constraints>
+                                <state key="normal" image="flag"/>
+                                <connections>
+                                    <action selector="flagToggled:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6v9-fk-sTw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="co8-b4-ROg" firstAttribute="trailing" secondItem="8Mt-5u-CcJ" secondAttribute="trailing" id="5DW-yI-vBC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KX9-il-huB" secondAttribute="trailing" id="9KF-we-Vxx"/>
+                            <constraint firstItem="co8-b4-ROg" firstAttribute="top" secondItem="8Mt-5u-CcJ" secondAttribute="bottom" constant="8" id="BIb-Sb-kyX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="w0v-wA-OeF" secondAttribute="bottom" constant="20" id="G19-BB-egN"/>
+                            <constraint firstItem="8Mt-5u-CcJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HA0-mZ-Lui"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="KX9-il-huB" secondAttribute="bottom" constant="8" symbolic="YES" id="HeM-8t-bVw"/>
+                            <constraint firstItem="N8z-hb-FJ7" firstAttribute="top" secondItem="8Mt-5u-CcJ" secondAttribute="bottom" constant="8" id="V91-qF-HWJ"/>
+                            <constraint firstItem="N8z-hb-FJ7" firstAttribute="leading" secondItem="8Mt-5u-CcJ" secondAttribute="leading" id="Zl5-U0-Ygi"/>
+                            <constraint firstItem="w0v-wA-OeF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rks-cQ-dzL"/>
+                            <constraint firstItem="8Mt-5u-CcJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tA9-Nc-y3D"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="boardView" destination="8Mt-5u-CcJ" id="Iew-ZW-eOJ"/>
+                        <outlet property="bombsLabel" destination="N8z-hb-FJ7" id="nPD-EA-KaM"/>
+                        <outlet property="timeLabel" destination="co8-b4-ROg" id="zws-Vh-I18"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flag" width="100" height="100"/>
+    </resources>
+</document>
